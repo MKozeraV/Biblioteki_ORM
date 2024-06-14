@@ -1,0 +1,16 @@
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Linq2db\Linq2db_dobre\Linq2db_dobre\bin\Debug\Linq2db_dobre.exe.config
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Linq2db\Linq2db_dobre\Linq2db_dobre\bin\Debug\Linq2db_dobre.exe
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Linq2db\Linq2db_dobre\Linq2db_dobre\bin\Debug\Linq2db_dobre.pdb
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Linq2db\Linq2db_dobre\Linq2db_dobre\bin\Debug\linq2db.dll
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Linq2db\Linq2db_dobre\Linq2db_dobre\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Linq2db\Linq2db_dobre\Linq2db_dobre\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Linq2db\Linq2db_dobre\Linq2db_dobre\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Linq2db\Linq2db_dobre\Linq2db_dobre\bin\Debug\linq2db.xml
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Linq2db\Linq2db_dobre\Linq2db_dobre\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Linq2db\Linq2db_dobre\Linq2db_dobre\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Linq2db\Linq2db_dobre\Linq2db_dobre\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Linq2db\Linq2db_dobre\Linq2db_dobre\obj\Debug\Linq2db_dobre.csproj.AssemblyReference.cache
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Linq2db\Linq2db_dobre\Linq2db_dobre\obj\Debug\Linq2db_dobre.csproj.CoreCompileInputs.cache
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Linq2db\Linq2db_dobre\Linq2db_dobre\obj\Debug\Linq2db_dobre.csproj.CopyComplete
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Linq2db\Linq2db_dobre\Linq2db_dobre\obj\Debug\Linq2db_dobre.exe
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Linq2db\Linq2db_dobre\Linq2db_dobre\obj\Debug\Linq2db_dobre.pdb

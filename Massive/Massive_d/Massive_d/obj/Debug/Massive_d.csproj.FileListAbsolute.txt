@@ -1,0 +1,7 @@
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Massive\Massive_d\Massive_d\obj\Debug\Massive_d.csproj.AssemblyReference.cache
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Massive\Massive_d\Massive_d\obj\Debug\Massive_d.csproj.CoreCompileInputs.cache
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Massive\Massive_d\Massive_d\bin\Debug\Massive_d.exe.config
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Massive\Massive_d\Massive_d\bin\Debug\Massive_d.exe
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Massive\Massive_d\Massive_d\bin\Debug\Massive_d.pdb
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Massive\Massive_d\Massive_d\obj\Debug\Massive_d.exe
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\Massive\Massive_d\Massive_d\obj\Debug\Massive_d.pdb

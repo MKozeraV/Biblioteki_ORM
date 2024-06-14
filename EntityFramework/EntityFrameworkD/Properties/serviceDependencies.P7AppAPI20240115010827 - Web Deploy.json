@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/P7AppAPI20240115010827/providers/Microsoft.ServiceLinker/linkers/ConnectionStringsBooksAPI_724CA424E7",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/p7appapidbserver2/databases/P7AppAPI_db",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:BooksAPI",
+      "dynamicId": null
+    }
+  }
+}

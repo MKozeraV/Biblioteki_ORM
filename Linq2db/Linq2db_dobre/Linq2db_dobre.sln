@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Linq2db_dobre", "Linq2db_dobre\Linq2db_dobre.csproj", "{BAEC846F-BD3B-4CF1-9255-A459F8A327DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAEC846F-BD3B-4CF1-9255-A459F8A327DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAEC846F-BD3B-4CF1-9255-A459F8A327DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAEC846F-BD3B-4CF1-9255-A459F8A327DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAEC846F-BD3B-4CF1-9255-A459F8A327DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {087D0C8F-2480-40C7-84C0-D0315BA91CDF}
+	EndGlobalSection
+EndGlobal
