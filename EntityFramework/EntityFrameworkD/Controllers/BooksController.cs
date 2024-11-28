@@ -60,6 +60,20 @@ namespace P7AppAPI.Controllers
             }
 
         }
+        [HttpPost("AddBookTransaction")]
+        public async Task<IActionResult> AddBookTransaction([FromBody] BookDTO bookInfo)
+        {
+            try
+            {
+                var response = await _bookService.AddBook(bookInfo);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
         [HttpPut("UpdateBook")]
         public async Task<IActionResult> UpdateBook([FromBody] BookDTO bookInfo)
         {

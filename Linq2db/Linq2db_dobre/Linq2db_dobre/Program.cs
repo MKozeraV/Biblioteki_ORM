@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using LinqToDB.Data;
 using static System.Diagnostics.Stopwatch;
 using System.Diagnostics;
+using static LinqToDB.Reflection.Methods.LinqToDB;
+using static LinqToDB.Sql;
 
 namespace Linq2db_dobre
 {
@@ -64,7 +66,7 @@ namespace Linq2db_dobre
                 }
                 //Console.WriteLine("Liczba elementow - "+q.Count());
                 sw.Stop();
-                double time = (double)sw.ElapsedMilliseconds / 10000;
+                double time = (double)sw.ElapsedMilliseconds / 1000;
 
                 Console.WriteLine("Sredni czas wykonania operacji pobrania listy w milisekundach - " + time);
             }
@@ -81,16 +83,16 @@ namespace Linq2db_dobre
                     select p;
                 }
                 sw.Stop();
-                double time = (double)sw.ElapsedMilliseconds / 10000;
+                double time = (double)sw.ElapsedMilliseconds / 1000;
 
                 Console.WriteLine("Sredni czas wykonania operacji pobrania konkretnego w milisekundach - " + time);
             }
             //dodawanie
-            using (var db = new DyplomowaDB())
+            /*using (var db = new DyplomowaDB())
             {
                 Stopwatch sw = new Stopwatch();
                 sw.Start();
-                for (int i = 0; i < 1000; i++)
+                for (int i = 11; i < 1011; i++)
                 {
                     db.Books
                         .Value(p => p.IdK, i)
@@ -100,16 +102,16 @@ namespace Linq2db_dobre
                         .Insert();
                 }
                 sw.Stop();
-                double time = (double)sw.ElapsedMilliseconds / 10000;
+                double time = (double)sw.ElapsedMilliseconds / 1000;
 
                 Console.WriteLine("Sredni czas wykonania operacji dodania w milisekundach - " + time);
-            }
+            }*/
             //aktualizacja
             using (var db = new DyplomowaDB())
             {
                 Stopwatch sw = new Stopwatch();
                 sw.Start();
-                for (int i = 0; i < 1000; i++)
+                for (int i = 11; i < 1011; i++)
                 {
                     db.Books
                         .Where(p=>p.IdK==i)
@@ -119,27 +121,94 @@ namespace Linq2db_dobre
                         .Update();
                 }
                 sw.Stop();
-                double time = (double)sw.ElapsedMilliseconds / 10000;
+                double time = (double)sw.ElapsedMilliseconds / 1000;
 
                 Console.WriteLine("Sredni czas wykonania operacji aktualizacji w milisekundach - " + time);
+            }
+            // uzycie zwyklego SQL zamiast LINQ do update'u 
+            using (var db = new DyplomowaDB())
+            {
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+                for (int i = 11; i < 1011; i++)
+                {
+                    const string sql = "UPDATE Books SET nazwa = @nazwa, autor=@autor, gatunek=@gatunek WHERE id_k=@id_k";
+                    db.Execute(sql, new { nazwa = "nowa nazwa", autor = "nowy autor", gatunek = "nowy gatunek", id_k = i });
+                }
+                sw.Stop();
+                double time = (double)sw.ElapsedMilliseconds / 1000;
+
+                Console.WriteLine("Sredni czas wykonania operacji aktualizacji z uzyciem zwyklego sql w milisekundach - " + time);
             }
             //usuwanie
             using (var db = new DyplomowaDB())
             {
                 Stopwatch sw = new Stopwatch();
                 sw.Start();
-                for (int i = 0; i < 1000; i++)
+                for (int i = 11; i < 1011; i++)
                 {
                     db.Books
                         .Where(p => p.IdK == i)
                         .Delete();
                 }
                 sw.Stop();
-                double time = (double)sw.ElapsedMilliseconds / 10000;
+                double time = (double)sw.ElapsedMilliseconds / 1000;
 
                 Console.WriteLine("Sredni czas wykonania operacji usuniecia w milisekundach - " + time);
             }
+            // uzycie zwyklego SQL zamiast LINQ do pobrania 
+            using (var db = new DyplomowaDB())
+            {
 
+                Stopwatch sw = new Stopwatch();
+                var q = new List<Book>();
+                sw.Start();
+                for (int i = 0; i < 1000; i++)
+                {
+                    q = db.Query<Book>("SELECT * FROM Books").ToList();
+                        
+                }
+                sw.Stop();
+                double time = (double)sw.ElapsedMilliseconds / 1000;
+
+                Console.WriteLine("Sredni czas wykonania operacji pobrania listy w milisekundach z użyciem zwykłego SQL - " + time);
+            }
+            //test transakcji 
+            using (var db = new DyplomowaDB())
+            {         
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+                
+
+                    for (int i = 11; i < 1011; i++)
+                    {
+                    using (var transakcja = db.BeginTransaction())
+                    {
+                        try
+                        {
+                            db.Books
+                                .Where(p => p.IdK == i)
+                                .Set(p => p.Nazwa, "testNowy1")
+                                .Set(p => p.Autor, "testNowy2")
+                                .Set(p => p.Gatunek, "testNowy3")
+                                .Update();
+
+                            transakcja.Commit();
+                        }
+                        catch
+                        {
+                            transakcja.Rollback();
+                            throw;
+                        }
+                        }
+                    }
+                
+                sw.Stop();
+                double time = (double)sw.ElapsedMilliseconds / 1000;
+
+                Console.WriteLine("Sredni czas wykonania operacji aktualizacji z transakcją w milisekundach - " + time);
+            }
+            Console.ReadLine();
 
 
 

@@ -57,6 +57,24 @@ namespace DapperD.Endpoints
                 return Results.Ok("Sredni czas wykonania operacji w milisekundach - " + time);
             });
 
+            builder.MapGet("booksCountTime", async (SqlConnectionFactory sqlConnectionFactory) =>
+            {
+                Stopwatch sw = new Stopwatch();
+                using var connection = sqlConnectionFactory.Create();
+
+                const string sql = "SELECT COUNT(*) FROM Books";
+                sw.Start();
+                var books = 0;
+                for (int i = 0; i < 10000; i++)
+                {
+                    books = await connection.ExecuteScalarAsync<int>(sql);
+                }
+                sw.Stop();
+                double time = (double)sw.ElapsedMilliseconds / 10000;
+                
+                return Results.Ok("Sredni czas wykonania operacji w milisekundach - " + time);
+            });
+
             builder.MapPost("books", async (Book book, SqlConnectionFactory sqlConnectionFactory) =>
             {
 
@@ -93,6 +111,35 @@ namespace DapperD.Endpoints
 
                 return Results.Ok("Sredni czas wykonania operacji w milisekundach - " + time);
             });
+
+            builder.MapPost("booksTimeTransaction", async (Book book, SqlConnectionFactory sqlConnectionFactory) =>
+            {
+                Stopwatch sw = new Stopwatch();
+                using var connection = sqlConnectionFactory.Create();
+                connection.Open();
+                sw.Start();
+                for (int i = 10; i < 10010; i++)
+                {
+                    using (var tran = connection.BeginTransaction())
+                    { 
+                    book.id_k = i;
+                    const string sql = """
+                INSERT INTO Books 
+                (id_k,nazwa,autor,gatunek)
+                VALUES
+                (@id_k,@nazwa,@autor,@gatunek)
+                """;
+                    await connection.ExecuteAsync(sql, book, tran);
+                    await tran.CommitAsync();
+                        
+                }
+                }
+                sw.Stop();
+                double time = (double)sw.ElapsedMilliseconds / 10000;
+
+                return Results.Ok("Sredni czas wykonania operacji w milisekundach - " + time);
+            });
+
             builder.MapPut("books/{id}", async (int id,Book book, SqlConnectionFactory sqlConnectionFactory) =>
             {
                 book.id_k = id;
@@ -165,6 +212,8 @@ namespace DapperD.Endpoints
 
                 return Results.Ok("Sredni czas wykonania operacji w milisekundach - " + time);
             });
+
+
 
         }
     }

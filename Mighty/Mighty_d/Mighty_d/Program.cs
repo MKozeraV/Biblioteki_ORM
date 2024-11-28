@@ -47,29 +47,45 @@ namespace Mighty_d
             //usuwanie
             Stopwatch sw3 = new Stopwatch();
             sw3.Start();
-            for (int i = 1; i < 10001; i++)
+            for (int i = 1; i < 10000; i++)
             {
                 books.Delete(new {id_k = i});
             }
             sw3.Stop();
             time = (double)sw3.ElapsedMilliseconds / 10000;
             Console.WriteLine("Sredni czas wykonania operacji usuwania w milisekundach - " + time);
-            Console.ReadLine();
             //aktualizacja
             Stopwatch sw4 = new Stopwatch();
             sw4.Start();
-            for (int i = 12445; i < 22445; i++)
+            for (int i = 10002; i < 11002; i++)
             {
-                var p = books.Single(i);
-                p.nazwa = "zmiana";
-                p.autor = "zmiana1";
-                p.gatunek = "zmiana3";
+                
+                var p = new { id_k = i, nazwa="zmiana",autor="zmiana1",gatunek="zmiana2"};
                 books.Update(p);
             }
 
             sw4.Stop();
-            time = (double)sw4.ElapsedMilliseconds / 10000;
+            time = (double)sw4.ElapsedMilliseconds / 1000;
             Console.WriteLine("Sredni czas wykonania operacji aktualizacji w milisekundach - " + time);
+            //dodawanie transakcją
+
+            sw2 = new Stopwatch();
+            sw2.Start();
+            for (int i = 0; i < 10000; i++)
+            {
+
+                using (var conn = books.OpenConnection())
+                {
+                    using (var transakcja = conn.BeginTransaction())
+                    {
+                        books.Insert(new { nazwa = "nazwa1T", autor = "WazowskiT", gatunek = "fikcjaT" });
+                        transakcja.Commit();
+                    }
+                }
+            }
+            sw2.Stop();
+            time = (double)sw2.ElapsedMilliseconds / 10000;
+            Console.WriteLine("Sredni czas wykonania operacji dodania z uzyciem transakcji w milisekundach - " + time);
             Console.ReadLine();
         }
     }

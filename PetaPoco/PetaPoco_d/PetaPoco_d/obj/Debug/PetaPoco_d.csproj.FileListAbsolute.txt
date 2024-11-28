@@ -1,0 +1,10 @@
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\PetaPoco\PetaPoco_d\PetaPoco_d\obj\Debug\PetaPoco_d.csproj.AssemblyReference.cache
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\PetaPoco\PetaPoco_d\PetaPoco_d\obj\Debug\PetaPoco_d.csproj.CoreCompileInputs.cache
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\PetaPoco\PetaPoco_d\PetaPoco_d\bin\Debug\PetaPoco_d.exe.config
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\PetaPoco\PetaPoco_d\PetaPoco_d\bin\Debug\PetaPoco_d.exe
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\PetaPoco\PetaPoco_d\PetaPoco_d\bin\Debug\PetaPoco_d.pdb
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\PetaPoco\PetaPoco_d\PetaPoco_d\bin\Debug\PetaPoco.dll
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\PetaPoco\PetaPoco_d\PetaPoco_d\bin\Debug\PetaPoco.xml
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\PetaPoco\PetaPoco_d\PetaPoco_d\obj\Debug\PetaPoco_d.csproj.CopyComplete
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\PetaPoco\PetaPoco_d\PetaPoco_d\obj\Debug\PetaPoco_d.exe
+C:\Users\kozer\OneDrive\Desktop\Dyplomówka\PetaPoco\PetaPoco_d\PetaPoco_d\obj\Debug\PetaPoco_d.pdb
